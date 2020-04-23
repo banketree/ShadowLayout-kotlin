@@ -34,7 +34,7 @@
         app:layout_constraintStart_toEndOf="@id/shadow1"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.banketree.shadown.widgets.ShadowLayout
+    <com.banketree.shadown.ShadowLayout
         android:id="@+id/shadow3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -62,5 +62,5 @@
             android:textColor="@android:color/holo_blue_dark"
             android:textSize="14sp" />
 
-    </com.banketree.shadown.widgets.ShadowLayout>
+    </com.banketree.shadown.ShadowLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

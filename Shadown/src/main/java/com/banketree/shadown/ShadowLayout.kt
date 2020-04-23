@@ -1,4 +1,4 @@
-package com.banketree.shadown.widgets
+package com.banketree.shadown
 
 import android.content.Context
 import android.content.res.Resources
@@ -7,8 +7,6 @@ import android.util.AttributeSet
 import android.util.TypedValue
 import android.view.View
 import android.widget.FrameLayout
-import com.banketree.shadown.IShadow
-import com.banketree.shadown.R
 import com.banketree.shadown.utils.DimenUtil.dp2px
 import kotlin.math.abs
 
@@ -46,7 +44,8 @@ class ShadowLayout : FrameLayout {
     private var shadowRadius = 0f
 
     //模糊度半径
-    private var blurRadius = SHADOW_DEFAULT_BLUR_RADIUS
+    private var blurRadius =
+        SHADOW_DEFAULT_BLUR_RADIUS
 
     //水平位移
     private var xOffset = dp2px(10f)
@@ -98,7 +97,7 @@ class ShadowLayout : FrameLayout {
             typedArray.getColor(R.styleable.ShadowLayout_shadowColor, Color.BLUE)
         blurRadius = typedArray.getDimension(
             R.styleable.ShadowLayout_blurRadius,
-            ShadowLayout.SHADOW_DEFAULT_BLUR_RADIUS
+            SHADOW_DEFAULT_BLUR_RADIUS
         )
         shadowRadius = typedArray.getDimension(R.styleable.ShadowLayout_shadowRadius, 0f)
         hasEffect = typedArray.getBoolean(R.styleable.ShadowLayout_hasEffect, false)
@@ -116,16 +115,16 @@ class ShadowLayout : FrameLayout {
         }
 
         blurRadius =
-            ShadowLayout.SHADOW_MAX_BLUR.coerceAtMost(blurRadius)
+            SHADOW_MAX_BLUR.coerceAtMost(blurRadius)
 
-        if (abs(xOffset) > ShadowLayout.SHADOW_MAX_OFFSET) {
+        if (abs(xOffset) > SHADOW_MAX_OFFSET) {
             xOffset =
-                xOffset / Math.abs(xOffset) * ShadowLayout.SHADOW_MAX_OFFSET
+                xOffset / Math.abs(xOffset) * SHADOW_MAX_OFFSET
         }
 
-        if (abs(yOffset) > ShadowLayout.SHADOW_MAX_OFFSET) {
+        if (abs(yOffset) > SHADOW_MAX_OFFSET) {
             yOffset =
-                yOffset / abs(yOffset) * ShadowLayout.SHADOW_MAX_OFFSET
+                yOffset / abs(yOffset) * SHADOW_MAX_OFFSET
         }
 
         setBackgroundColor(Color.parseColor("#00ffffff"))

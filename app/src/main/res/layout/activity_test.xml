@@ -7,7 +7,7 @@
     android:background="#efefef"
     tools:context=".MainActivity">
 
-    <com.banketree.shadown.widgets.ShadowLayout
+    <com.banketree.shadown.ShadowLayout
         android:id="@+id/shadowLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -32,7 +32,7 @@
             android:padding="5dp"
             android:text="Hello World!" />
 
-    </com.banketree.shadown.widgets.ShadowLayout>
+    </com.banketree.shadown.ShadowLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
