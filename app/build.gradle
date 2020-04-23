@@ -1,25 +1,20 @@
-apply plugin: 'com.android.library'
-
+apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 def androidConfig = rootProject.ext.android
 def dependence = rootProject.ext.dependence
 
-group = 'com.github.banketree'
-
 android {
     compileSdkVersion androidConfig.compileSdkVersion
     buildToolsVersion androidConfig.buildToolsVersion
 
     defaultConfig {
+        applicationId "com.banketree.shadowlayout_demo"
         minSdkVersion androidConfig.minSdkVersion
         targetSdkVersion androidConfig.targetSdkVersion
-        versionCode 1
-        versionName "1.0"
-
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles 'consumer-rules.pro'
+        versionCode androidConfig["versionCode"] // 版本号
+        versionName androidConfig["versionName"]
     }
 
     buildTypes {
@@ -40,15 +35,6 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
     }
 
-    //生成libs目录
-//    sourceSets { //TODO
-//        main.jniLibs.srcDirs = ['libs']
-//    }
-
-    //支持@Parcelize来实现Parcelable序列化
-    androidExtensions {
-        experimental = true
-    }
 }
 
 dependencies {
@@ -57,5 +43,7 @@ dependencies {
     implementation dependence['kotlin-stdlib-jdk7']
     implementation dependence['appcompat']
     implementation dependence['core-ktx']
+    implementation dependence['constraintlayout']
+    implementation dependence['material']
     implementation project(path: ':Shadown')
 }

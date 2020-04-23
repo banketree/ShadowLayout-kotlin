@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f2f2f2">
+
+    <TextView
+        android:id="@+id/shadow1"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:elevation="3dp"
+        android:gravity="center"
+        android:text="系统阴影"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/shadow2"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/shadow_layer"
+        android:gravity="center"
+        android:text="layer-list阴影"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@id/shadow1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.banketree.shadown.widgets.ShadowLayout
+        android:id="@+id/shadow3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/shadow_layer"
+        android:gravity="center"
+        android:text=""
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="14sp"
+        app:blurRadius="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/shadow1"
+        app:shadowColor="#333"
+        app:shadowRadius="0dp"
+        app:xOffset="0dp"
+        app:yOffset="0dp">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="自定义应用布局"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textSize="14sp" />
+
+    </com.banketree.shadown.widgets.ShadowLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
