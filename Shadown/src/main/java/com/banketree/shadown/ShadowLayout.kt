@@ -127,7 +127,7 @@ class ShadowLayout : FrameLayout {
                 yOffset / abs(yOffset) * SHADOW_MAX_OFFSET
         }
 
-        setBackgroundColor(Color.parseColor("#00ffffff"))
+//        setBackgroundColor(Color.parseColor("#00ffffff"))
         init()
     }
 
